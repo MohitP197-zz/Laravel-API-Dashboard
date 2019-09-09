@@ -31,10 +31,8 @@ class TasksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-
-    }
+    public function create(Request $request)
+    {}
 
     /**
      * Store a newly created resource in storage.
@@ -44,15 +42,6 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'description' => 'required',
-        //     'location' => 'required',
-        //     'Assigned_to' => 'required',
-        // ]);
-
-        // Tasks::create($request->all());
-
-        // return redirect()->route('task.index')->with('success','Task created successfully');
         return Tasks::create($request->all());
     }
 
@@ -63,9 +52,7 @@ class TasksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        return $tasks;
-    }
+    { }
 
     /**
      * Show the form for editing the specified resource.
@@ -98,6 +85,9 @@ class TasksController extends Controller
      */
     public function destroy($id)
     {
-        return $tasks->delete();
+        $task = Tasks::findOrFail($id);
+
+
+        return $task->delete();
     }
 }

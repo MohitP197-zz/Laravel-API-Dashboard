@@ -69,7 +69,7 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        return $tasks;
+        // return $tasks;
     }
 
     /**
@@ -103,6 +103,9 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        return $tasks->delete();
+        $task = Tasks::findOrFail($id);
+
+
+        return $task->delete();
     }
 }
