@@ -15,8 +15,12 @@
           <input type="text" name="description" class="form-control" id="exampleInputPassword1" placeholder="Description">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Location</label>
-          <input type="text" name="location" class="form-control" id="exampleInputPassword1" placeholder="Location">
+          <label for="exampleInputPassword1">Latitude</label>
+          <input type="text" name="latitude" class="form-control" id="exampleInputPassword1" placeholder="Latitude">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Longitude</label>
+          <input type="text" name="longitude" class="form-control" id="exampleInputPassword1" placeholder="Longitude">
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">User</label>

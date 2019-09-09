@@ -8,7 +8,8 @@
         <tr>
           <th scope="col">Task Name</th>
           <th scope="col">Description</th>
-          <th scope="col">Location</th>
+          <th scope="col">Latitude</th>
+          <th scope="col">Longitude</th>
         </tr>
       </thead>
       <tbody>
@@ -16,7 +17,8 @@
         <tr>
           <td>{{$task->task_name}}</td>
           <td>{{$task->description}}</td>
-          <td>{{$task->location}}</td>
+          <td>{{$task->latitude}}</td>
+          <td>{{$task->longitude}}</td>
         </tr>
         @endforeach
       </tbody>

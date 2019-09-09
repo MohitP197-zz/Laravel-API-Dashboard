@@ -6,13 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tasks extends Model
 {
-    protected $fillable = ['id','task_name','description','location','user_id'];
 
-    public function users(){
-    	return $this->belongsTo('App\User');
+    protected $attributes = ['status' => "Not Complete"];
+    protected $fillable = ['id', 'task_name', 'description', 'latitude', 'longitude', 'status', 'user_id'];
+
+    public function users()
+    {
+        return $this->belongsTo('App\User');
     }
 
-    public function Office(){
-    	return $this->belongsTo('App\office');
+    public function Office()
+    {
+        return $this->belongsTo('App\office');
     }
 }

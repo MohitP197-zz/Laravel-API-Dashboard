@@ -17,7 +17,9 @@ class CreateTasksTable extends Migration
             $table->bigIncrements('id');
             $table->text('task_name');
             $table->text('description');
-            $table->string('location');
+            $table->string('latitude');
+            $table->string('longitude');
+            $table->string('status')->default("Not Complete");
             // $table->string('Assigned_to');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();

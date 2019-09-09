@@ -8,7 +8,8 @@
         <tr>
           <th scope="col">Task Name</th>
           <th scope="col">Description</th>
-          <th scope="col">Location</th>
+          <th scope="col">Latitude</th>
+          <th scope="col">Longitude</th>
           <th scope="col">User</th>
           <th scope="col">Action</th>
         </tr>
@@ -20,7 +21,8 @@
         <tr>
           <td>{{$task->task_name}}</td>
           <td>{{$task->description}}</td>
-          <td>{{$task->location}}</td>
+          <td>{{$task->latitude}}</td>
+          <td>{{$task->longitude}}</td>
           <td>{{$task->user_id}}</td>
           <td>
             <form action="{{route('tasks.destroy',$task->id)}}" method="POST">

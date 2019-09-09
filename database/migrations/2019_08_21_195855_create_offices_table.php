@@ -17,7 +17,8 @@ class CreateOfficesTable extends Migration
             $table->bigIncrements('id');
             $table->string('office_name');
             $table->text('description');
-            $table->string('location');
+            $table->string('latitude');
+            $table->string('longitude');
             $table->unsignedBigInteger('task_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
