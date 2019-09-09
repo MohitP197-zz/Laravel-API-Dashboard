@@ -22,7 +22,7 @@ class TasksController extends Controller
         //     'data' => $data,
         //     'message' => 'tasks retrieved successfully.'
         // ];
-        $tasks = Tasks::all();
+        $tasks = Tasks::select('id', 'task_name', 'description', 'category', 'latitude', 'longitude', 'status', 'user_id')->get();
         return $tasks;
     }
 
@@ -32,7 +32,7 @@ class TasksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(Request $request)
-    {}
+    { }
 
     /**
      * Store a newly created resource in storage.
@@ -74,7 +74,9 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $task = Tasks::findOrFail($id);
+
+        return $task->update($request->all());
     }
 
     /**

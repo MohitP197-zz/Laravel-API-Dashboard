@@ -15,6 +15,16 @@
           <input type="text" name="description" value="{{$task->description}}" class="form-control" id="exampleInputPassword1" placeholder="Description">
         </div>
         <div class="form-group">
+          <label for="category">Category</label>
+          <select name="category">
+          <option value="Security Camera">Security Camera</option>  
+          <option value="Video Recording">Video Recording</option>  
+          <option value="EPABX">EPABX</option>  
+          <option value="Attendance System">Attendance System</option>  
+          <option value="Fire Fighting">Fire Fighting</option>  
+          </select>  
+        </div>
+        <div class="form-group">
           <label for="exampleInputPassword1">Latitude</label>
           <input type="text" name="latitude" class="form-control" value="{{$task->latitude}}" id="exampleInputPassword1" placeholder="Location">
         </div>

@@ -17,6 +17,7 @@ class CreateTasksTable extends Migration
             $table->bigIncrements('id');
             $table->text('task_name');
             $table->text('description');
+            $table->string('category');
             $table->string('latitude');
             $table->string('longitude');
             $table->string('status')->default("Not Complete");
