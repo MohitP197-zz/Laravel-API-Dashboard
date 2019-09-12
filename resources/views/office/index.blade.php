@@ -14,7 +14,7 @@
           <th scope="col">Action</th>
         </tr>
       </thead>
-      <a href="{{route('office.create')}}">Create</a>
+      <a href="{{route('offices.create')}}">Create</a>
       <tbody>
         @foreach($officesses as $office)
         <tr>

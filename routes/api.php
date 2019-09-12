@@ -34,4 +34,4 @@ Route::group([
      Route::resource('task','TasksController');
      Route::resource('feedback','API\FeedbackController');
      Route::resource('user', 'AuthController');
-     Route::resource('office', 'OfficeController');
+     Route::resource('office', 'API\OfficeController');

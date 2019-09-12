@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Feedback;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\office;
 
-class FeedbackController extends Controller
+class OfficeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        $feedback = Feedback::all();
+        $office = office::all();
 
-        return $feedback;
+        return $office;
     }
 
     /**
@@ -38,7 +38,7 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
-        return Feedback::create($request->all());
+        return office::create($request->all());
         
     }
 
@@ -73,7 +73,9 @@ class FeedbackController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $office = office::findOrFail($id);
+
+        return $office->update($request->all());
     }
 
     /**
@@ -84,6 +86,9 @@ class FeedbackController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $office = office::findOrFail($id);
+
+
+        return $office->delete();
     }
 }
