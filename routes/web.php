@@ -27,5 +27,8 @@ Route::resource('offices', 'OfficeController');
 
 Route::resource('staffs', 'StaffsController');
 
+Route::resource('feedbacks', 'FeedbackController');
+
+
 
 

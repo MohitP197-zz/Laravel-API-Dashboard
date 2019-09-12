@@ -116,6 +116,17 @@
               </a>
             </li>
             @endcan
+
+            @can('isAdmin')          
+            <li class="nav-item">
+                <a href="/feedbacks" class="nav-link">
+                  <i class="nav-icon fas fa-user"></i>
+                  <p>
+                    Feedback
+                  </p>
+                </a>
+              </li>
+              @endcan
          
         </ul>
       </nav>
