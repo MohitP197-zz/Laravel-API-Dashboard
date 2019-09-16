@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\office;
+use App\Tasks;
+use App\User;
 
 class OfficeController extends Controller
 {
@@ -15,7 +17,8 @@ class OfficeController extends Controller
     public function index()
     {
         $officesses = office::all();
-        return view('office.index', compact('officesses'));
+        return view('admin/office.index', compact('officesses'));
+        // return view('office.index', compact('officesses'));
     }
 
     /**
@@ -25,7 +28,10 @@ class OfficeController extends Controller
      */
     public function create()
     { 
-        return view('office.create');
+        $users = User::all();
+        $tasks = Tasks::all();
+        // return view('office.create',compact('users','tasks'));
+        return view('admin/office.create',compact('users','tasks'));
     }
 
     /**
@@ -66,10 +72,13 @@ class OfficeController extends Controller
     public function edit($id)
     {
         $officesses = office::findOrFail($id);
+        $users = User::all();
+        $tasks = Tasks::all();
 
         // dd($task->toarray());
 
-        return view('office.edit',compact('officesses'));
+        // return view('office.edit',compact('officesses'));
+        return view('admin/office.edit',compact('officesses','users','tasks'));
     }
 
     /**

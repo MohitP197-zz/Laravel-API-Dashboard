@@ -16,7 +16,8 @@ class StaffsController extends Controller
     public function index()
     {
         $getStaffs = User::all();
-        return view('staff.index', compact('getStaffs'));
+        // return view('staff.index', compact('getStaffs'));
+        return view('admin/staff.index',compact('getStaffs'));
     }
 
     /**
@@ -26,7 +27,8 @@ class StaffsController extends Controller
      */
     public function create()
     { 
-        return view('staff.create');
+        // return view('staff.create');
+        return view('admin/staff.create');
     }
 
     /**
@@ -78,7 +80,8 @@ class StaffsController extends Controller
 
         // dd($task->toarray());
 
-        return view('staff.edit',compact('getStaffs'));
+        // return view('staff.edit',compact('getStaffs'));
+        return view('admin/staff.edit',compact('getStaffs'));
     }
 
     /**

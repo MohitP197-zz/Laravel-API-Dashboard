@@ -16,7 +16,8 @@ class FeedbackController extends Controller
     {
         $feedbacks = Feedback::all();
 
-        return view('feedback.index',compact('feedbacks'));
+        // return view('feedback.index',compact('feedbacks'));
+        return view('admin/feedback.index',compact('feedbacks'));
     }
 
     /**
@@ -86,6 +87,6 @@ class FeedbackController extends Controller
 
         $feedbacks->delete();
 
-        return redirect()->route('feedback.index');
+        return redirect()->route('feedbacks.index');
     }
 }

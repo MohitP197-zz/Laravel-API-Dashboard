@@ -17,7 +17,8 @@ class TaskController extends Controller
     public function index()
     {
         $getTasks = Tasks::all();
-        return view('task.index', compact('getTasks'));
+        // return view('task.index', compact('getTasks'));
+        return view('admin/task.index', compact('getTasks'));
     }
 
     public function individual()
@@ -26,7 +27,7 @@ class TaskController extends Controller
 
         $tasks = Tasks::where('user_id', $user)->get();
 
-        return view('task.individual', compact('tasks'));
+        return view('admin/task.individual', compact('tasks'));
     }
 
     /**
@@ -37,7 +38,8 @@ class TaskController extends Controller
     public function create()
     {
         $users = User::all();
-        return view('task.create', compact('users'));
+        // return view('task.create', compact('users'));
+        return view('admin/task.create', compact('users'));
     }
 
     /**
@@ -48,11 +50,8 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-
-        // Tasks::create($request->all());
-
-        // return redirect()->route('task.index')->with('success','Task created successfully');
-        return Tasks::create($request->all());
+        $task = Tasks::create($request->all());
+        return redirect(route('tasks.index'));
     }
 
     /**
@@ -76,7 +75,8 @@ class TaskController extends Controller
 
         // dd($task->toarray());
 
-        return view('task.edit', compact('task'));
+        // return view('task.edit', compact('task'));
+        return view('admin/task.edit', compact('task'));
     }
 
     /**
