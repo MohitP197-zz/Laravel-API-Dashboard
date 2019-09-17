@@ -12,12 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('login'));
 });
 
-Route::get('/test', function () {
-    return view('admin/register.index');
-});
+// Route::get('/test', function () {
+//     return view('admin/register.index');
+// });
 
 Auth::routes();
 
@@ -26,14 +26,10 @@ Route::get('/admin', 'HomeController@index')->name('admin');
 
 Route::resource('tasks', 'TaskController');
 
-Route::get('myTasks','TaskController@individual')->name('individualTasks');
+Route::get('myTasks', 'TaskController@individual')->name('individualTasks');
 
 Route::resource('offices', 'OfficeController');
 
 Route::resource('staffs', 'StaffsController');
 
 Route::resource('feedbacks', 'FeedbackController');
-
-
-
-
