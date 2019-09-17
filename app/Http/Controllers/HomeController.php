@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Feedback;
+use App\office;
+use App\Tasks;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,8 +27,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $tasks = Tasks::all()->count();
+        $office = office::all()->count();
+        $feedback = Feedback::all()->count();
+        $technician = User::all()->where('role','technician')->count();
         // return view('home');
-        return view('admin.index');
+        return view('admin.index',compact('tasks','office','feedback','technician'));
         
     }
 

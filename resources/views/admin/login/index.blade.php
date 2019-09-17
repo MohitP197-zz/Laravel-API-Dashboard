@@ -107,11 +107,11 @@
 
 
     <!-- Required common Js -->
-    <script src='js/jquery-2.2.3.min.js'></script>
+    <script src='{{asset('js/admin/jquery-2.2.3.min.js')}}'></script>
     <!-- //Required common Js -->
 
     <!-- Js for bootstrap working-->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{asset('js/admin/bootstrap.min.js')}}"></script>
     <!-- //Js for bootstrap working -->
 
     <!-- Code injected by live-server -->

@@ -9,7 +9,7 @@
     <div class="profile-bg"></div>
     <ul class="list-unstyled components">
         <li class="active">
-            <a href="#">
+            <a href="/admin">
                 <i class="fas fa-th-large"></i>
                 Dashboard
             </a>
