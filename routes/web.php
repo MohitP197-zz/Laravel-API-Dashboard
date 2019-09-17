@@ -15,10 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/test', function () {
+//     return view('admin/login.index');
+// });
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin', 'HomeController@admin');
+Route::get('/admin', 'HomeController@index')->name('admin');
+// Route::get('/admin', 'HomeController@admin')->name('h');
 
 Route::resource('tasks', 'TaskController');
 
