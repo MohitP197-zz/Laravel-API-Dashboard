@@ -17,22 +17,22 @@
                             <i class="fas fa-bars"></i>
                         </button>
                     </div>
-                    <!-- Search-from -->
+                    {{-- <!-- Search-from -->
                     <form action="#" method="post" class="form-inline mx-auto search-form">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
                             required="">
                         <button class="btn btn-style my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                    </form> --}}
                     <!--// Search-from -->
                     <ul class="top-icons-agileits-w3layouts float-right">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            {{-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="far fa-bell"></i>
                                 <span class="badge">4</span>
-                            </a>
+                            </a> --}}
                             <div class="dropdown-menu top-grid-scroll drop-1">
-                                <h3 class="sub-title-w3-agileits">User notifications</h3>
+                                {{-- <h3 class="sub-title-w3-agileits">User notifications</h3>
                                 <a href="#" class="dropdown-item mt-3">
                                     <div class="notif-img-agileinfo">
                                         <img src="images/clone.jpg" class="img-fluid" alt="Responsive image">
@@ -43,8 +43,8 @@
                                             tempus convallis quis ac lectus.</p>
                                         <h6>4 mins ago</h6>
                                     </div>
-                                </a>
-                                <a href="#" class="dropdown-item mt-3">
+                                </a> --}}
+                                {{-- <a href="#" class="dropdown-item mt-3">
                                     <div class="notif-img-agileinfo">
                                         <img src="images/clone.jpg" class="img-fluid" alt="Responsive image">
                                     </div>
@@ -54,8 +54,8 @@
                                             tempus convallis quis ac lectus.</p>
                                         <h6>6 mins ago</h6>
                                     </div>
-                                </a>
-                                <a href="#" class="dropdown-item mt-3">
+                                </a> --}}
+                                {{-- <a href="#" class="dropdown-item mt-3">
                                     <div class="notif-img-agileinfo">
                                         <img src="images/clone.jpg" class="img-fluid" alt="Responsive image">
                                     </div>
@@ -78,10 +78,10 @@
                                     </div>
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">view all notifications</a>
+                                <a class="dropdown-item" href="#">view all notifications</a> --}}
                             </div>
                         </li>
-                        <li class="nav-item dropdown mx-3">
+                        {{-- <li class="nav-item dropdown mx-3">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-spinner"></i>
@@ -105,7 +105,7 @@
                                         <i class="fab fa-superpowers mr-3"></i>Cras rutrum</h4>
                                 </a>
                             </div>
-                        </li>
+                        </li> --}}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -121,7 +121,7 @@
                                         <a href="mailto:info@example.com"> {{ Auth::user()->email }}</a>
                                     </div>
                                 </div>
-                                <a href="#" class="dropdown-item mt-3">
+                                {{-- <a href="#" class="dropdown-item mt-3">
                                     <h4>
                                         <i class="far fa-user mr-3"></i>My Profile</h4>
                                 </a>
@@ -140,7 +140,7 @@
                                 <a href="#" class="dropdown-item mt-3">
                                     <h4>
                                         <i class="far fa-thumbs-up mr-3"></i>Support</h4>
-                                </a>
+                                </a> --}}
                                 <div class="dropdown-divider"></div>
                                 {{--  <a class="dropdown-item" href="login.html">Logout</a>  --}}
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
