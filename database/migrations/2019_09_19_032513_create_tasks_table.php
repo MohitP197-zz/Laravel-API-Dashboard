@@ -18,13 +18,11 @@ class CreateTasksTable extends Migration
             $table->text('task_name');
             $table->text('description');
             $table->string('category');
-            $table->string('latitude');
-            $table->string('longitude');
+            $table->string('location');
             $table->string('status')->default("Not Complete");
             // $table->string('Assigned_to');
-            $table->unsignedBigInteger('user_id');
+            $table->string('user_id');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

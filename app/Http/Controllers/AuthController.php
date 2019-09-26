@@ -81,11 +81,17 @@ class AuthController extends Controller
         // $role = User::select('role')->where('email',$em)->where('password',$pw)->first();
         $roles = Auth::user();
         $getRole = $roles->role;
+        $getId = $roles->id;
+        $getName = $roles->name;
+        $getEmail = $roles->email;
         return response()->json([
             'access_token' => $tokenResult->accessToken,
             'token_type' => 'Bearer',
             // 'www' => $pw,
             'role' => $getRole,
+            'id' => $getId,
+            'name' => $getName,
+            'email' => $getEmail,
             'expires_at' => Carbon::parse(
                 $tokenResult->token->expires_at
             )->toDateTimeString()

@@ -1,4 +1,4 @@
-@extends('admin/layout.masters')
+@extends('admin.Layout.masters')
 @section('title')
 COMTECH
 @endsection

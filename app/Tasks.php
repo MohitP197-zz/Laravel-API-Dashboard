@@ -8,7 +8,7 @@ class Tasks extends Model
 {
 
     protected $attributes = ['status' => "Not Complete"];
-    protected $fillable = ['id', 'task_name', 'description','category', 'latitude', 'longitude', 'status', 'user_id'];
+    protected $fillable = ['id', 'task_name', 'description','category', 'location', 'status', 'user_id'];
 
     public function users()
     {

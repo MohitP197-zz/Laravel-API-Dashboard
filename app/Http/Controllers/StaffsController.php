@@ -15,7 +15,8 @@ class StaffsController extends Controller
      */
     public function index()
     {
-        $getStaffs = User::all();
+        // $getStaffs = User::all();
+        $getStaffs = User::with('tasks')->get();
         // return view('staff.index', compact('getStaffs'));
         return view('admin/staff.index',compact('getStaffs'));
     }

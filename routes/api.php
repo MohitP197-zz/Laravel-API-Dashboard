@@ -35,3 +35,4 @@ Route::group([
      Route::resource('feedback','API\FeedbackController');
      Route::resource('user', 'AuthController');
      Route::resource('office', 'API\OfficeController');
+     Route::resource('technicians', 'UserController');

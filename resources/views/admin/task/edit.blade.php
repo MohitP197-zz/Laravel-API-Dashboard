@@ -19,35 +19,42 @@ COMTECH
                 <div class="form-group col-md-6">
                     <label for="user_id">User</label>
                     <select id="user_id" name="user_id" class="form-control">
-                        <option value="{{$task->user_id}}">{{$task->user_id}}</option>
+                        @foreach ($users as $user)
+                        <option value="{{ $user->name }}"
+                            {{ ( $user->name == $task->user_id) ? 'selected' : '' }}>
+                            {{ $user->name }} </option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="category">Category</label>
                     <select id="category" name="category" class="form-control">
                         <option selected="">Choose...</option>
-                        <option value="Security Camera">Security Camera</option>
+                        {{--  <option value="Security Camera">Security Camera</option>
                         <option value="Video Recording">Video Recording</option>
                         <option value="EPABX">EPABX</option>
                         <option value="Attendance System">Attendance System</option>
-                        <option value="Fire Fighting">Fire Fighting</option>
+                        <option value="Fire Fighting">Fire Fighting</option>  --}}
+
+                        @foreach ($categories as $category)
+                        <option value="{{ $category->category }}"
+                            {{ ( $category->category == $task->category) ? 'selected' : '' }}>
+                            {{ $category->category }} </option>
+                        @endforeach
+                    </select>
                     </select>
                 </div>
 
+
                 <div class="form-group col-md-6">
-                    <label for="latitude">Latitude</label>
-                    <input type="text" class="form-control" value="{{$task->latitude}}" name="latitude" id="latitude"
-                        placeholder="Latitude" required="">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="longitude">Longitude</label>
-                    <input type="text" class="form-control" value="{{$task->longitude}}" name="longitude" id="longitude"
-                        placeholder="Longitude" required="">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" value="{{$task->location}}" name="location" id="location"
+                        placeholder="location" required="">
                 </div>
                 <div class="form-group col-md-12">
                     <label for="description">Description</label>
                     <textarea class="form-control" name="description" id="description"
-                        placeholder="Description of the Task" required=""></textarea>
+                        placeholder="Description of the Task" required="">{{$task->description}}</textarea>
                 </div>
 
             </div>

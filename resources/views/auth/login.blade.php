@@ -163,9 +163,7 @@
                     <button type="submit" class="btn btn-primary error-w3l-btn mt-sm-5 mt-3 px-4">
                         {{ __('Login') }}</button>
                 </form>
-                <p class="paragraph-agileits-w3layouts mt-4">Dont have an account
-                    <a href="{{route('register')}}">Create an account</a>
-                </p>
+              
                 <h1 class="paragraph-agileits-w3layouts mt-2">
                     <a href="index.html">Back to Home</a>
                 </h1>

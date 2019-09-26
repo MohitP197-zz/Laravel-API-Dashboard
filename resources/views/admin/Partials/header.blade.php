@@ -4,6 +4,7 @@
         <h1>
             <a href="#">COMTECH</a>
         </h1>
+        <p style="margin-left: 12px;">Task Management App</p>
         <span>CM</span>
     </div>
     <div class="profile-bg"></div>
@@ -30,6 +31,13 @@
             <a href="/offices">
                 <i class="fas fa-th"></i>
                 Offices
+            </a>
+        </li>
+
+        <li>
+            <a href="/report">
+                <i class="fas fa-th"></i>
+                Report
             </a>
         </li>
 

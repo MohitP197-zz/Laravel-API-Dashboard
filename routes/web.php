@@ -12,19 +12,22 @@
 */
 
 Route::get('/', function () {
-    return redirect(route('login'));
+    return redirect(route('admin'));
 });
+
+Auth::routes(['register' => false]);
 
 // Route::get('/test', function () {
 //     return view('admin/register.index');
 // });
 
-Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->name('admin');
 // Route::get('/admin', 'HomeController@admin')->name('h');
 
 Route::resource('tasks', 'TaskController');
+
+Route::resource('report', 'ReportController');
 
 Route::get('myTasks', 'TaskController@individual')->name('individualTasks');
 

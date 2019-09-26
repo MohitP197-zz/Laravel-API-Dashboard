@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Tasks;
 use App\User;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
-class TaskController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,18 +14,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $getTasks = Tasks::all();
-        // return view('task.index', compact('getTasks'));
-        return view('admin/task.index', compact('getTasks'));
-    }
-
-    public function individual()
-    {
-        $user = Auth::user()->id;
-
-        $tasks = Tasks::where('user_id', $user)->get();
-
-        return view('admin/task.individual', compact('tasks'));
+        $technicians = User::where('role','technician')->get();
+        return $technicians;
     }
 
     /**
@@ -37,9 +25,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        $users = User::where('role', 'technician')->get();
-        // return view('task.create', compact('users'));
-        return view('admin/task.create', compact('users'));
+        //
     }
 
     /**
@@ -50,8 +36,7 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        $task = Tasks::create($request->all());
-        return redirect(route('tasks.index'));
+        //
     }
 
     /**
@@ -61,7 +46,9 @@ class TaskController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    { }
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -71,16 +58,7 @@ class TaskController extends Controller
      */
     public function edit($id)
     {
-        $task = Tasks::findOrFail($id);
-        $categories = Tasks::all();
-        $users = User::where('role','technician')->get();
-
-        // dd($categories->toArray());
-
-        // dd($task->toarray());
-
-        // return view('task.edit', compact('task'));
-        return view('admin/task.edit', compact('task', 'categories','users'));
+        //
     }
 
     /**
@@ -92,11 +70,7 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $task = Tasks::findOrFail($id);
-
-        $task = $task->update($request->all());
-
-        return redirect(route('tasks.index'));
+        //
     }
 
     /**
@@ -107,10 +81,6 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        $task = Tasks::findOrFail($id);
-
-        $task->delete();
-
-        return redirect()->route('tasks.index');
+        //
     }
 }

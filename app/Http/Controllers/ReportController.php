@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Tasks;
 use App\User;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class TaskController extends Controller
+class ReportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,18 +16,34 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $getTasks = Tasks::all();
-        // return view('task.index', compact('getTasks'));
-        return view('admin/task.index', compact('getTasks'));
-    }
+        // $tech = Tasks::select('user_id')->get();
+        // // dd($tech);
 
-    public function individual()
-    {
-        $user = Auth::user()->id;
+        // $reports = Tasks::where('user_id', $tech)->get();
 
-        $tasks = Tasks::where('user_id', $user)->get();
+        // $reports = DB::table('tasks')->select('user_id')->where('status', 'Not Complete')->count('status');
+        // // $techs = $solved[2]->status;
+        // // $techs = Tasks::where('user_id', $solved->user_id)->count();
+        // $report = DB::table('tasks')
+        //     ->select('user_id')
+        //     ->select(DB::raw('count(*) as Completed Projects'))
+        //     ->groupBy('user_id')
+        //     ->unionAll('')
+        //     ->select(DB::raw('count(*)'))->orderBy('case')
+        //     ->count();
 
-        return view('admin/task.individual', compact('tasks'));
+        $report = DB::table('tasks')->select('user_id as User')
+            ->get(array('tasks.user_id', 'count(*) AS Completed Projects'))
+            ->sum('tasks.status as Completed Projects')
+            ->groupby('user_id');
+
+        // // dd($report);
+        // $reports = User::where('role', 'technician')->with('Tasks')->get();
+        // $report = DB::table('tasks')->select('user_id')->select(DB::raw('count(*)'));
+
+        dd($report->toArray());
+
+        return view('admin/report.index', compact('reports'));
     }
 
     /**
@@ -37,9 +53,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        $users = User::where('role', 'technician')->get();
-        // return view('task.create', compact('users'));
-        return view('admin/task.create', compact('users'));
+        //
     }
 
     /**
@@ -50,8 +64,7 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        $task = Tasks::create($request->all());
-        return redirect(route('tasks.index'));
+        //
     }
 
     /**
@@ -61,7 +74,9 @@ class TaskController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    { }
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -71,16 +86,7 @@ class TaskController extends Controller
      */
     public function edit($id)
     {
-        $task = Tasks::findOrFail($id);
-        $categories = Tasks::all();
-        $users = User::where('role','technician')->get();
-
-        // dd($categories->toArray());
-
-        // dd($task->toarray());
-
-        // return view('task.edit', compact('task'));
-        return view('admin/task.edit', compact('task', 'categories','users'));
+        //
     }
 
     /**
@@ -92,11 +98,7 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $task = Tasks::findOrFail($id);
-
-        $task = $task->update($request->all());
-
-        return redirect(route('tasks.index'));
+        //
     }
 
     /**
@@ -107,10 +109,6 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        $task = Tasks::findOrFail($id);
-
-        $task->delete();
-
-        return redirect()->route('tasks.index');
+        //
     }
 }

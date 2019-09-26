@@ -16,8 +16,7 @@ COMTECH
                         <th scope="col">Description</th>
                         <th scope="col">Status</th>
                         <th scope="col">Technician</th>
-                        <th scope="col">Latitude</th>
-                        <th scope="col">Longitude</th>
+                        <th scope="col">Location</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -30,10 +29,10 @@ COMTECH
                         <td>{{$tasks->id}}</td>
                         <td>{{$tasks->task_name}}</td>
                         <td>{{$tasks->description}}</td>
+
                         <td>{{$tasks->status}}</td>
                         <td>{{$tasks->user_id}}</td>
-                        <td>{{$tasks->latitude}}</td>
-                        <td>{{$tasks->longitude}}</td>
+                        <td>{{$tasks->location}}</td>
                         <td>
                             <form action="{{route('tasks.destroy',$tasks->id)}}" method="POST">
                                 <a href="{{ route('tasks.edit',$tasks->id) }}">Edit</a>
